@@ -4,75 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Henkilöasiakkaat - If</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Ylätunniste -->
     <header class="site-header">
-        <div class="header-inner">
-            <a href="henkiloasiakkaat.html"><img src="assets/if.png" alt="If" class="logo-small"></a>
-            <nav class="main-nav">
-                <a href="vakuutukset-henkilo.html">Vakuutukset</a>
-                <a href="#">Vahingot</a>
-                <a href="#">Asiakaspalvelu</a>
-                <a href="#">Tietoa Ifistä</a>
-            </nav>
-            <div class="header-actions">
-                <select class="lang-select" onchange="location = this.value;">
-                    <option value="henkiloasiakkaat.html" selected>Suomeksi</option>
-                    <option value="henkiloasiakkaat-en.html">In English</option>
-                    <option value="henkiloasiakkaat-sv.html">På Svenska</option>
-                </select>
-                <a href="kirjaudu.html" class="btn-login">Kirjaudu</a>
+        <div class="top-bar">
+            <div class="top-bar-inner">
+                <nav class="top-nav">
+                    <a href="henkiloasiakkaat.html" class="active">Henkilöasiakkaat</a>
+                    <a href="yritysasiakkaat.html">Yritysasiakkaat</a>
+                    <a href="suurasiakkaat.html">Suurasiakkaat</a>
+                </nav>
+                <div class="top-actions">
+                    <div class="lang-selector">🌐 FI ⌄</div>
+                    <button class="btn-login-top">👤 Kirjaudu ⌄</button>
+                </div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="main-header-inner">
+                <a href="henkiloasiakkaat.html"><img src="if.png" alt="If" class="logo-img"></a>
+                <nav class="main-nav">
+                    <a href="#">Vakuutukset ⌄</a>
+                    <a href="#">Vahingot</a>
+                    <a href="#">Asiakaspalvelu ⌄</a>
+                </nav>
+                <div class="header-right-actions">
+                    <a href="#">🔍 Haku</a>
+                    <a href="#">🛒 Ostoskori</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Turvaa arkesi ja unelmasi</h1>
-            <p>If auttaa sinua, kun sitä eniten tarvitset.</p>
-            <a href="vakuutukset-henkilo.html" class="btn-primary">Tutustu vakuutuksiin</a>
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>If auttaa paljon</h1>
+                <p>Kun sattuu ja tapahtuu, olemme apunasi. Varmistetaan yhdessä, että vakuutuksesi turvaavat olennaisen.</p>
+                
+                <div class="hero-cards">
+                    <a href="#" class="hero-card">🚗 Auto</a>
+                    <a href="#" class="hero-card">🏠 Koti</a>
+                    <a href="#" class="hero-card">🧳 Matka</a>
+                    <a href="#" class="hero-card">🏍️ Moottoripyörä</a>
+                    <a href="#" class="hero-card">🛵 Mopo</a>
+                    <a href="#" class="hero-card">👤 Henkilö</a>
+                </div>
+                
+                <a href="#" class="link-blue">Kaikki vakuutuksemme</a>
+            </div>
+            <div class="hero-image">
+                <!-- Korvaa tämä oikealla kuvalla, tässä esimerkki -->
+                <img src="https://images.unsplash.com/photo-1549468057-5b7fa1a41d7a?auto=format&fit=crop&q=80&w=800" alt="Perhe automatkalla">
+            </div>
         </div>
     </section>
 
-    <!-- Vakuutuskategoriat -->
-    <section class="insurance-categories">
-        <h2>Vakuutukset henkilöasiakkaille</h2>
-        <div class="category-grid">
-            <a href="vakuutukset-henkilo.html" class="category-card">
-                <h3>Koti ja omaisuus</h3>
-                <p>Kotivakuutus, irtaimisto, huvila...</p>
+    <section class="quick-links-section">
+        <div class="quick-links-container">
+            <a href="kirjaudu.html" class="quick-link-box">
+                <div class="quick-link-content">👤 Omat sivut</div>
+                <div>→</div>
             </a>
-            <a href="vakuutukset-henkilo.html" class="category-card">
-                <h3>Ajoneuvot</h3>
-                <p>Liikennevakuutus, kasko, vene...</p>
+            <a href="#" class="quick-link-box">
+                <div class="quick-link-content">❓ Asiakaspalvelu<br><span style="font-size:0.85rem; font-weight:400;">henkilöasiakkaille</span></div>
+                <div>→</div>
             </a>
-            <a href="vakuutukset-henkilo.html" class="category-card">
-                <h3>Henkilö ja terveys</h3>
-                <p>Sairausvakuutus, tapaturma, henkivakuutus...</p>
-            </a>
-            <a href="vakuutukset-henkilo.html" class="category-card">
-                <h3>Matkustaminen</h3>
-                <p>Matkavakuutus, matkatavaraturva...</p>
-            </a>
-            <a href="vakuutukset-henkilo.html" class="category-card">
-                <h3>Eläimet ja metsä</h3>
-                <p>Lemmikkivakuutus, hevosvakuutus, metsävakuutus...</p>
-            </a>
-            <a href="vakuutukset-henkilo.html" class="category-card">
-                <h3>Lapset ja perhe</h3>
-                <p>Lapsivakuutus, vauvavakuutus...</p>
+            <a href="#" class="quick-link-box">
+                <div class="quick-link-content">📝 Ilmoita vahingosta</div>
+                <div>→</div>
             </a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-inner">
-            <p>&copy; If Vakuutus. Kaikki oikeudet pidätetään.</p>
-            <p><a href="#">Tietosuoja</a> | <a href="#">Käyttöehdot</a> | <a href="#">Evästeet</a></p>
+            <div class="footer-col">
+                <h4>If vakuutukset</h4>
+                <a href="#">Autovakuutus 〉</a>
+                <a href="#">Kotivakuutus 〉</a>
+                <a href="#">Matkavakuutus 〉</a>
+                <a href="#">Terveysturva 〉</a>
+                <a href="#">Katso kaikki vakuutukset 〉</a>
+            </div>
+            <div class="footer-col">
+                <h4>Apua vahinkotilanteessa</h4>
+                <a href="#">Ajoneuvovahingot 〉</a>
+                <a href="#">Omaisuusvahingot 〉</a>
+                <a href="#">Henkilövahingot 〉</a>
+                <a href="#">Matkavahingot 〉</a>
+            </div>
+            <div class="footer-col">
+                <h4>Asiakaspalvelu</h4>
+                <a href="#">Yhteystiedot 〉</a>
+                <a href="kirjaudu.html">Omat sivut 〉</a>
+                <a href="#">If Mobiili 〉</a>
+                <a href="#">Usein kysytyt kysymykset 〉</a>
+            </div>
+            <div class="footer-col">
+                <h4>Tietoa vakuutusyhtiö Ifistä</h4>
+                <a href="#">Tietoa Ifistä 〉</a>
+                <a href="#">Vastuullisuus 〉</a>
+                <a href="#">Uutishuone 〉</a>
+                <a href="#">Blogi 〉</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-legal-links">
+                <a href="#">Yritysasiakkaat ↗</a>
+                <a href="#">Käyttöehdot</a>
+                <a href="#">Henkilötietojen käsittely</a>
+                <a href="#">Evästeet</a>
+                <a href="#">På svenska</a>
+                <a href="#">In English</a>
+            </div>
+            <div>© If Vahinkovakuutus Oyj, Suomen sivuliike</div>
         </div>
     </footer>
 </body>
