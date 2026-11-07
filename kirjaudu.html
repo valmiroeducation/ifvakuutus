@@ -3,60 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirjaudu - If</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Kirjaudu - Omat sivut - If</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="login-page">
-    <div class="login-container">
-        <img src="assets/if.png" alt="If" class="logo">
-        <h1>Kirjaudu sisään</h1>
-        <p>Valitse kirjautumistyyppi</p>
+<body>
+    <!-- Yläpalkki ilman ylimääräisiä linkkejä -->
+    <header class="site-header">
+        <div class="main-header">
+            <div class="main-header-inner">
+                <a href="henkiloasiakkaat.html"><img src="if.png" alt="If" class="logo-img"></a>
+                <nav class="main-nav">
+                    <a href="#">Vakuutukset</a>
+                    <a href="#">Vahingot</a>
+                    <a href="#">Asiakaspalvelu</a>
+                    <a href="yritysasiakkaat.html">Yritysasiakkaat</a>
+                    <a href="suurasiakkaat.html">Suurasiakkaat</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-        <div class="login-tabs">
-            <button class="tab active" onclick="showTab('personal')">Omat sivut (Henkilö)</button>
-            <button class="tab" onclick="showTab('employee')">Työntekijän Omat sivut</button>
-            <button class="tab" onclick="showTab('company')">Yrityksen Omat sivut</button>
-            <button class="tab" onclick="showTab('large')">If Login (Suurasiakkaat)</button>
-        </div>
-
-        <div id="personal" class="login-form active">
-            <label>Henkilötunnus</label>
-            <input type="text" placeholder="PPKKVV-XXXX">
-            <label>Salasana</label>
-            <input type="password" placeholder="Salasana">
-            <button class="btn-primary">Kirjaudu</button>
-        </div>
-        <div id="employee" class="login-form">
-            <p>Työntekijän kirjautuminen (esim. työsuhde-edut)</p>
-            <label>Sähköposti</label>
-            <input type="email" placeholder="nimi@yritys.fi">
-            <button class="btn-primary">Kirjaudu</button>
-        </div>
-        <div id="company" class="login-form">
-            <p>Yrityksen Omat sivut</p>
-            <label>Y-tunnus</label>
-            <input type="text" placeholder="1234567-8">
-            <label>Käyttäjätunnus</label>
-            <input type="text">
-            <button class="btn-primary">Kirjaudu</button>
-        </div>
-        <div id="large" class="login-form">
-            <p>If Login - suurasiakkaiden palveluportaali</p>
-            <label>Käyttäjätunnus</label>
-            <input type="text">
-            <label>Salasana</label>
-            <input type="password">
-            <button class="btn-primary">Kirjaudu If Login</button>
-        </div>
+    <!-- Huijausviesti-banneri (kuten kuvassa 5) -->
+    <div style="background: #FFF8D6; padding: 24px; text-align: center; border-bottom: 1px solid #E5E3DF;">
+        <h2 style="font-weight: 400; font-size: 1.5rem; margin-bottom: 12px;">Ifin nimissä lähetetty huijausviestejä</h2>
+        <p style="font-size: 0.95rem; color: #4A3B32;">Viestit liittyvät esimerkiksi bonuksiin tai erääntyneeseen laskuun. Ethän avaa näiden viestien linkkejä. Voit tarkistaa oman laskutilanteesi Laskut-sivulla.<br>
+        <a href="#" style="color: #0054F0; text-decoration: underline;">Lue lisää huijausviesteistä</a></p>
     </div>
 
-    <script>
-        function showTab(id) {
-            document.querySelectorAll('.login-form').forEach(f => f.classList.remove('active'));
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            event.target.classList.add('active');
-        }
-    </script>
-</body>
-</html>
+    <section class="login-layout">
+        <div class="login-container">
+            <!-- Vasen puoli -->
+            <div class="login-info">
+                <h3>Turvallisen tunnistautumisen tarjoaa Telia.</h3>
+                <br>
+                <a href="#">Henkilötietojen käsittely</a>
+                <br>
+                <h3>Betjäning på svenska</h3>
+                <a href="#">Gå till Mina sidor</a>
+                <br>
+                <h3>Ota If Mobiili -sovellus käyttöösi.</h3>
+                <a href="#">Lue lisää</a>
+            </div>
+
+            <!-- Oikea puoli -->
+            <div class="login-methods">
+                <h3>Valitse kirjautumistapa</h3>
+                <div class="bank-grid">
+                    <a href="#" class="bank-btn">Aktia</a>
+                    <a href="#" class="bank-btn">ÅLANDSBANKEN</a>
+                    <a href="#" class="bank-btn">Danske Bank</a>
+                    <a href="#" class="bank-btn">Nordea</a>
+                    <a href="#" class="bank-btn">OmaSp</a>
+                    <a href="#" class="bank-btn">OP</a>
+                    <a href="#" class="bank-btn">POP Pankki</a>
+                    <a href="#" class="bank-btn">S-PANKKI</a>
