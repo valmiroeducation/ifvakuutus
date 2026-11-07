@@ -1,386 +1,96 @@
-/* Perusasetukset */
+/* --- PERUSASETUKSET --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* If käyttää omaa fonttia, tämä on lähin turvallinen */
-    color: #331E11; /* Tummanruskea Cedar */
-    background: #FAF9F7; /* Erittäin vaalea Pampas */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #331E11; /* Ifin tummanruskea */
+    background: #FAF9F7;
     line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-/* =========================================
-   HEADER (Kuten kuvissa 1, 2 ja 3)
-   ========================================= */
-.site-header { width: 100%; }
-
-/* Yläpalkki (harmaa) */
-.top-bar {
-    background: #F4F2EE; /* Hieman tummempi harmaa */
-    border-bottom: 1px solid #E5E3DF;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-}
-.top-bar-inner {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-}
-.top-nav {
-    display: flex;
-    align-items: stretch;
-}
-.top-nav a {
-    display: flex;
-    align-items: center;
-    padding: 0 24px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #331E11;
-    border-bottom: 3px solid transparent;
-}
+/* --- HEADER (Yläpalkki) --- */
+.site-header { width: 100%; display: flex; flex-direction: column; }
+.top-bar { background: #F4F2EE; border-bottom: 1px solid #E5E3DF; height: 48px; display: flex; justify-content: center; }
+.top-bar-inner { width: 100%; max-width: 1200px; display: flex; justify-content: space-between; align-items: stretch; }
+.top-nav { display: flex; align-items: stretch; }
+.top-nav a { display: flex; align-items: center; padding: 0 24px; font-size: 14px; font-weight: 500; border-bottom: 3px solid transparent; }
 .top-nav a.active { background: #fff; border-bottom-color: #0054F0; font-weight: 600; }
 .top-nav a:hover:not(.active) { background: #EAE8E4; }
 
-.top-actions {
-    display: flex;
-    align-items: stretch;
-}
-.lang-selector {
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    gap: 6px;
-}
+.top-actions { display: flex; align-items: stretch; }
+.lang-selector { display: flex; align-items: center; padding: 0 20px; font-size: 14px; font-weight: 500; cursor: pointer; gap: 6px; }
 .lang-selector:hover { background: #EAE8E4; }
-.btn-login-top {
-    background: #0054F0;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    padding: 0 30px;
-    font-size: 14px;
-    font-weight: 600;
-    gap: 8px;
-    border: none;
-    cursor: pointer;
-}
+.btn-login-top { background: #0054F0; color: #fff; display: flex; align-items: center; padding: 0 30px; font-size: 14px; font-weight: 600; gap: 8px; border: none; cursor: pointer; }
 .btn-login-top:hover { background: #0042c2; }
 
-/* Alapalkki (valkoinen) */
-.main-header {
-    background: #fff;
-    border-bottom: 1px solid #E5E3DF;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-}
-.main-header-inner {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    gap: 40px;
-}
-.logo-img { height: 44px; } /* if.png */
+.main-header { background: #fff; border-bottom: 1px solid #E5E3DF; height: 80px; display: flex; justify-content: center; }
+.main-header-inner { width: 100%; max-width: 1200px; display: flex; align-items: center; padding: 0 20px; gap: 40px; }
+.logo-img { height: 48px; width: auto; } /* Pakotetaan logo oikeaan kokoon */
 
-.main-nav {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-    flex-grow: 1;
-}
-.main-nav a {
-    font-size: 15px;
-    font-weight: 500;
-    color: #331E11;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
+.main-nav { display: flex; gap: 24px; align-items: center; flex-grow: 1; }
+.main-nav a { font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 4px; }
 .main-nav a:hover { color: #0054F0; }
+.header-right-actions { display: flex; gap: 24px; align-items: center; font-size: 15px; font-weight: 500; }
 
-.header-right-actions {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-    font-size: 15px;
-    font-weight: 500;
-}
-.header-right-actions a {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.header-right-actions a:hover { color: #0054F0; }
+/* --- SISÄLTÖALUEET --- */
+.page-container-center { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+.page-title { font-size: 2.5rem; font-weight: 400; margin-bottom: 40px; }
 
-/* =========================================
-   HERO-ALUE (Etusivut)
-   ========================================= */
-.hero-section {
-    background: #F4F2EE; /* Beige tausta */
-    display: flex;
-    justify-content: center;
-    padding: 60px 20px 80px;
-}
-.hero-container {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-.hero-text { flex: 1; max-width: 500px; }
-.hero-text h1 {
-    font-size: 3.5rem;
-    font-weight: 400; /* Ifin otsikko on ohut/medium */
-    margin-bottom: 20px;
-    line-height: 1.1;
-    color: #331E11;
-}
-.hero-text p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    color: #4A3B32;
-}
+/* Maanvalinta */
+.country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.country-card { background: #fff; border: 1px solid #E5E3DF; border-radius: 8px; padding: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 500; transition: border 0.2s, box-shadow 0.2s; }
+.country-card:hover { border-color: #0054F0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
-/* Kortit Heron alla (Auto, Kodi, Matka jne.) */
-.hero-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 30px;
-}
-.hero-card {
-    background: #fff;
-    padding: 16px 20px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    border: 1px solid #fff;
-    transition: border 0.2s;
-}
+/* --- HERO (Etusivut) --- */
+.hero-section { background: #F4F2EE; display: flex; justify-content: center; padding: 60px 20px 80px; }
+.hero-container { width: 100%; max-width: 1200px; display: flex; align-items: center; gap: 60px; }
+.hero-text { flex: 1; }
+.hero-text h1 { font-size: 3.5rem; font-weight: 400; margin-bottom: 20px; line-height: 1.1; }
+.hero-text p { font-size: 1.1rem; margin-bottom: 30px; }
+.hero-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 30px; }
+.hero-card { background: #fff; padding: 16px 20px; border-radius: 8px; display: flex; align-items: center; gap: 12px; font-weight: 500; font-size: 0.95rem; border: 1px solid transparent; transition: border 0.2s; }
 .hero-card:hover { border-color: #0054F0; }
-
-.link-blue {
-    color: #0054F0;
-    font-weight: 600;
-    text-decoration: none;
-}
+.link-blue { color: #0054F0; font-weight: 600; }
 .link-blue:hover { text-decoration: underline; }
+.hero-image { flex: 1; border-radius: 12px; overflow: hidden; }
+.hero-image img { width: 100%; height: auto; display: block; object-fit: cover; }
 
-.hero-image {
-    flex: 1;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-.hero-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
+/* Yrityssivun lomake */
+.y-tunnus-form { margin-top: 20px; }
+.y-tunnus-form input { width: 100%; max-width: 400px; padding: 14px; border: 1px solid #CCC; border-radius: 4px; font-size: 1rem; margin-bottom: 16px; }
+.btn-blue { background: #0054F0; color: #fff; padding: 14px 32px; border-radius: 4px; font-weight: 600; border: none; cursor: pointer; font-size: 1rem; display: block; max-width: 400px; width: 100%; }
 
-/* Y-tunnus lomake (Yrityssivu) */
-.y-tunnus-form { margin-top: 20px; max-width: 400px; }
-.y-tunnus-form label { font-size: 0.9rem; font-weight: 500; margin-bottom: 8px; display: block; }
-.y-tunnus-form input {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #CCC;
-    border-radius: 4px;
-    font-size: 1rem;
-    margin-bottom: 16px;
-}
-.btn-blue {
-    background: #0054F0;
-    color: #fff;
-    padding: 14px 32px;
-    border-radius: 4px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1rem;
-}
-.btn-blue:hover { background: #0042c2; }
-
-/* =========================================
-   QUICK LINKS (Omat sivut, Asiakaspalvelu jne.)
-   ========================================= */
-.quick-links-section {
-    display: flex;
-    justify-content: center;
-    background: #FAF9F7;
-    padding: 40px 20px;
-}
-.quick-links-container {
-    width: 100%;
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-.quick-link-box {
-    background: #F4F2EE;
-    padding: 24px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    transition: background 0.2s;
-    border: 1px solid #EBE9E5;
-}
+/* --- QUICK LINKS (Omat sivut, Asiakaspalvelu) --- */
+.quick-links-section { display: flex; justify-content: center; padding: 40px 20px; }
+.quick-links-container { width: 100%; max-width: 1200px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.quick-link-box { background: #F4F2EE; padding: 24px; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #EBE9E5; transition: background 0.2s; }
 .quick-link-box:hover { background: #EAE8E4; }
-.quick-link-content {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-weight: 500;
-    font-size: 1.05rem;
-}
+.quick-link-content { display: flex; align-items: center; gap: 16px; font-weight: 500; font-size: 1.05rem; }
 
-/* =========================================
-   ALATUNNISTE (Footer)
-   ========================================= */
-.site-footer {
-    background: #FAF9F7;
-    padding: 60px 20px 20px;
-    border-top: 1px solid #E5E3DF;
-}
-.footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-.footer-col h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: #331E11;
-}
-.footer-col a {
-    display: block;
-    margin-bottom: 12px;
-    font-size: 0.95rem;
-    color: #0054F0;
-    font-weight: 500;
-}
-.footer-col a:hover { text-decoration: underline; }
+/* --- KIRJAUTUMINEN --- */
+.login-layout { display: flex; justify-content: center; padding: 60px 20px; }
+.login-container { max-width: 1000px; width: 100%; display: flex; gap: 60px; }
+.login-info { flex: 1; max-width: 350px; }
+.login-info h3 { font-size: 1.1rem; margin-bottom: 8px; margin-top: 24px; font-weight: 600; }
+.login-info a { color: #0054F0; text-decoration: underline; font-size: 0.95rem; }
+.login-methods { flex: 2; }
+.login-methods h3 { font-size: 1.1rem; margin-bottom: 24px; font-weight: 600; }
+.bank-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; }
+.bank-btn { background: #fff; border: 1px solid #E5E3DF; border-radius: 8px; height: 70px; display: flex; justify-content: center; align-items: center; font-weight: 600; transition: border 0.2s; }
+.bank-btn:hover { border-color: #0054F0; }
 
-.footer-bottom {
-    max-width: 1200px;
-    margin: 0 auto;
-    border-top: 1px solid #E5E3DF;
-    padding-top: 24px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    font-size: 0.9rem;
-    color: #331E11;
-}
+/* --- FOOTER --- */
+.site-footer { background: #FAF9F7; padding: 60px 20px 20px; border-top: 1px solid #E5E3DF; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.footer-col h4 { font-size: 1rem; font-weight: 600; margin-bottom: 16px; }
+.footer-col a { display: block; margin-bottom: 12px; font-size: 0.95rem; color: #0054F0; font-weight: 500; }
+.footer-bottom { max-width: 1200px; margin: 0 auto; border-top: 1px solid #E5E3DF; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; font-size: 0.9rem; }
 .footer-legal-links { display: flex; gap: 24px; flex-wrap: wrap; }
 .footer-legal-links a { color: #0054F0; }
 
-/* =========================================
-   MAANVALINTA & KIRJAUTUMINEN (Kuvat 4 & 5)
-   ========================================= */
-.page-container-center {
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-.page-title {
-    font-size: 2.5rem;
-    font-weight: 400;
-    margin-bottom: 40px;
-}
-
-/* Maanvalinta grid */
-.country-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-}
-.country-card {
-    background: #fff;
-    border: 1px solid #E5E3DF;
-    border-radius: 8px;
-    padding: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: border 0.2s, box-shadow 0.2s;
-}
-.country-card:hover {
-    border-color: #0054F0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-/* Kirjautumissivu (Kuvakaappaus 7) */
-.login-layout {
-    display: flex;
-    justify-content: center;
-    background: #FAF9F7;
-    min-height: calc(100vh - 200px);
-    padding: 60px 20px;
-}
-.login-container {
-    max-width: 1000px;
-    width: 100%;
-    display: flex;
-    gap: 60px;
-}
-.login-info {
-    flex: 1;
-    max-width: 350px;
-}
-.login-info h3 { font-size: 1.1rem; margin-bottom: 16px; font-weight: 600; }
-.login-info p { font-size: 0.95rem; margin-bottom: 16px; color: #4A3B32; }
-.login-info a { color: #0054F0; text-decoration: underline; font-size: 0.95rem; display: block; margin-bottom: 16px; }
-.login-info a:hover { color: #0042c2; }
-
-.login-methods { flex: 2; }
-.login-methods h3 { font-size: 1.1rem; margin-bottom: 24px; font-weight: 600; }
-.bank-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 16px;
-}
-.bank-btn {
-    background: #fff;
-    border: 1px solid #E5E3DF;
-    border-radius: 8px;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    color: #333;
-    transition: border 0.2s;
-}
-.bank-btn:hover { border-color: #0054F0; }
-
-/* Mobiili */
+/* --- MOBIILI --- */
 @media (max-width: 900px) {
     .hero-container { flex-direction: column; }
     .hero-text h1 { font-size: 2.5rem; }
@@ -388,4 +98,5 @@ ul { list-style: none; }
     .top-bar-inner { flex-direction: column; height: auto; }
     .top-nav { overflow-x: auto; }
     .top-nav a { padding: 12px 16px; }
+    .header-right-actions { display: none; } /* Piilotetaan haku mobiilissa toistaiseksi */
 }
