@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirjaudu - If</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <img src="assets/if.png" alt="If" class="logo">
+        <h1>Kirjaudu sisään</h1>
+        <p>Valitse kirjautumistyyppi</p>
+
+        <div class="login-tabs">
+            <button class="tab active" onclick="showTab('personal')">Omat sivut (Henkilö)</button>
+            <button class="tab" onclick="showTab('employee')">Työntekijän Omat sivut</button>
+            <button class="tab" onclick="showTab('company')">Yrityksen Omat sivut</button>
+            <button class="tab" onclick="showTab('large')">If Login (Suurasiakkaat)</button>
+        </div>
+
+        <div id="personal" class="login-form active">
+            <label>Henkilötunnus</label>
+            <input type="text" placeholder="PPKKVV-XXXX">
+            <label>Salasana</label>
+            <input type="password" placeholder="Salasana">
+            <button class="btn-primary">Kirjaudu</button>
+        </div>
+        <div id="employee" class="login-form">
+            <p>Työntekijän kirjautuminen (esim. työsuhde-edut)</p>
+            <label>Sähköposti</label>
+            <input type="email" placeholder="nimi@yritys.fi">
+            <button class="btn-primary">Kirjaudu</button>
+        </div>
+        <div id="company" class="login-form">
+            <p>Yrityksen Omat sivut</p>
+            <label>Y-tunnus</label>
+            <input type="text" placeholder="1234567-8">
+            <label>Käyttäjätunnus</label>
+            <input type="text">
+            <button class="btn-primary">Kirjaudu</button>
+        </div>
+        <div id="large" class="login-form">
+            <p>If Login - suurasiakkaiden palveluportaali</p>
+            <label>Käyttäjätunnus</label>
+            <input type="text">
+            <label>Salasana</label>
+            <input type="password">
+            <button class="btn-primary">Kirjaudu If Login</button>
+        </div>
+    </div>
+
+    <script>
+        function showTab(id) {
+            document.querySelectorAll('.login-form').forEach(f => f.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
